@@ -1,8 +1,8 @@
 <template>
   <div :class="theme === 'light' ? 'body-light' : 'body-dark'" class="main-body">
-    <div class="flex">
+    <div style="padding:5px">      
       <div>Theme selection in Vue 3</div>
-      <div></div>
+      <button @click="changeTheme">Switch Theme</button>
     </div>
   </div>
 </template>
@@ -14,6 +14,12 @@ export default {
   data() {
     return {
       theme: "dark"
+    }
+  },
+  methods: {
+    changeTheme() {
+      console.log("here");
+      this.theme = this.theme === "dark" ? "light" : "dark";
     }
   }
 }
@@ -31,8 +37,5 @@ export default {
 .body-dark {
   background-color: black;
   color: white;
-}
-.flex {
-  display: flex;
 }
 </style>
