@@ -1,5 +1,5 @@
 <template>
-  <div :class="theme === 'light' ? 'body-light' : 'body-dark'" class="main-body">
+  <div :class="theme === 'light' ? 'light-theme' : 'dark-theme'" class="main-body">
     <div style="padding:5px">      
       <div>Theme selection in Vue 3</div>
       <button @click="changeTheme">Switch Theme</button>
@@ -10,18 +10,18 @@
 <script>
 
 export default {
-  name: 'App',
+  name: 'App',    
   data() {
     return {
-      theme: "dark"
+      theme: "light"
     }
   },
   methods: {
     changeTheme() {
-      console.log("here");
+      console.log("I am changing theme");
       this.theme = this.theme === "dark" ? "light" : "dark";
     }
-  }
+  }  
 }
 </script>
 
@@ -30,11 +30,11 @@ export default {
   height: 100vh;
   padding: 0 2px 0 2px;
 }
-.body-light {
+.light-theme {
   background-color: white;
   color: black;
 }
-.body-dark {
+.dark-theme {
   background-color: black;
   color: white;
 }
